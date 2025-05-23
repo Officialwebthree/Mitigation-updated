@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 4%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 1%;
+  --secondary: 217 32% 18%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 32% 18%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 217 32% 18%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 32% 18%;
+  --input: 217 32% 18%;
+  --ring: 224 76% 48%;
+}
+
+body {
+  @apply bg-gray-950 text-white antialiased;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Beautiful scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(17, 24, 39);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(55, 65, 81);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(75, 85, 99);
+}
+
+/* Keyframe animation for stats */
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 2s infinite;
+}
+
+/* Smooth transition effects */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600;
+}
